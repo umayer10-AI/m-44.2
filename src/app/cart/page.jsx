@@ -2,6 +2,8 @@ import ModalTask from '@/component/ModalTask';
 import TaskCarts from '@/component/TaskCarts';
 import { createTask } from '@/lib/action';
 import { cartInfo } from '@/lib/cart';
+import { Button } from '@heroui/react';
+import Link from 'next/link';
 import React from 'react';
 
 const page = async () => {
@@ -14,6 +16,7 @@ const page = async () => {
             <h2 className='text-2xl font-bold text-center my-6'>Carts Page: {data.length}</h2>
             <div className='flex justify-center my-5'>
                 <ModalTask createTask={createTask}></ModalTask>
+                <Link href={'/cart/new'}><Button variant='secondary'>Add Task</Button></Link>
             </div>
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-5 max-w-[90%] mx-auto'>
                 {
