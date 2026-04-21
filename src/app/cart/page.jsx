@@ -14,7 +14,7 @@ const page = async () => {
     return (
         <div>
             <h2 className='text-2xl font-bold text-center my-6'>Carts Page: {data.length}</h2>
-            <div className='flex justify-center my-5'>
+            <div className='flex justify-center my-5 gap-2'>
                 <ModalTask createTask={createTask}></ModalTask>
                 <Link href={'/cart/new'}><Button variant='secondary'>Add Task</Button></Link>
             </div>

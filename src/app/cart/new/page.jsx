@@ -8,7 +8,15 @@ const page = () => {
     return (
         <div className='max-w-1/3 mx-auto'>
             <form action={newCreateTask} className="flex flex-col gap-4">
-                  <TextField className="w-full" name="title" type="text">
+                  <TextField
+                  isRequired
+                  minLength={5}
+                  validate={(value) => {
+                    if(value.length < 5) {
+                        return "Title must be at least 5 characters";
+                    }
+                  }}
+                   className="w-full" name="title" type="text">
                     <Label>Title</Label>
                     <Input placeholder="Enter your cart Title" />
                   </TextField>

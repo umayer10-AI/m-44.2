@@ -20,7 +20,9 @@ const ModalTask = ({createTask}) => {
             <Modal.Body className="p-6">
               <Surface variant="default">
                 <form action={createTask} className="flex flex-col gap-4">
-                  <TextField className="w-full" name="title" type="text">
+                  <TextField
+                  isRequired
+                   className="w-full" name="title" type="text">
                     <Label>Title</Label>
                     <Input placeholder="Enter your cart Title" />
                   </TextField>
