@@ -29,7 +29,7 @@ const ModalTask = ({createTask}) => {
                     <Input placeholder="Enter your description" />
                   </TextField>
 
-        <Select className="w-[256px]" name='Priority' placeholder="Select one">
+        <Select className="w-[256px]" name='priority' placeholder="Select one">
       <Label>Priority</Label>
       <Select.Trigger>
         <Select.Value />
@@ -54,7 +54,7 @@ const ModalTask = ({createTask}) => {
       </Select.Popover>
     </Select>
 
-                                <Select className="w-[256px]" name='Status' placeholder="Select one">
+                                <Select className="w-[256px]" name='status' placeholder="Select one">
                                 <Label>Status</Label>
                                 <Select.Trigger>
                                     <Select.Value />
