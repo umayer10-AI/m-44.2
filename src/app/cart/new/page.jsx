@@ -3,6 +3,7 @@ import React from 'react';
 import {Envelope} from "@gravity-ui/icons";
 import {Button, Input, Label, Modal, Surface, TextField, ListBox, Select, FieldError} from "@heroui/react";
 import { newCreateTask } from '@/lib/action';
+import SubmitButton from '@/component/SubmitButton';
 
 const page = () => {
     return (
@@ -86,7 +87,7 @@ const page = () => {
                     <Button slot="close" variant="secondary">
                         Cancel
                     </Button>
-                    <Button type='submit' slot="close">Send Task</Button>
+                    <SubmitButton></SubmitButton>
                     </Modal.Footer>
                 </form>
         </div>

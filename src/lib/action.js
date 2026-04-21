@@ -25,11 +25,11 @@ export const newCreateTask = async (formData) => {
     console.log(newTask)
 
     if(!newTask.title){
-        return {success: false, messege: "Title is required"}
+        return {success: false, error: "Title is required"}
     }
 
     if(newTask.title.trim().length < 5){
-        return {success: false, messege: "Title is must be 5 character or longer"}
+        return {success: false, error: "Title is must be 5 character or longer"}
     }
 
     const res = await getPost(newTask)
