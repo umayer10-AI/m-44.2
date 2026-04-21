@@ -1,6 +1,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/component/Navbar";
+import NextTheme from "@/providers/NextThemeToggle";
+import NextThemeToggle from "@/providers/NextThemeToggle";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,11 +23,14 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
-        <Navbar></Navbar>
-        {children}
+      <body className="min-h-full flex flex-col bg-background text-foreground">
+        <NextThemeToggle>
+          <Navbar></Navbar>
+          {children}
+        </NextThemeToggle>
         </body>
     </html>
   );

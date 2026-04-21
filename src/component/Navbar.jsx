@@ -1,5 +1,6 @@
 import React from 'react';
 import NavLink from './NavLink';
+import ToggleTheme from './ToggleTheme';
 
 const Navbar = () => {
     return (
@@ -10,7 +11,7 @@ const Navbar = () => {
                 </div>
                 <NavLink></NavLink>
                 <div>
-                    
+                    <ToggleTheme></ToggleTheme>
                 </div>
             </header>
         </nav>
