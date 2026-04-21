@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
 import {Envelope} from "@gravity-ui/icons";
-import {Button, Input, Label, Modal, Surface, TextField, ListBox, Select} from "@heroui/react";
+import {Button, Input, Label, Modal, Surface, TextField, ListBox, Select, FieldError} from "@heroui/react";
 
 const ModalTask = ({createTask}) => {
     return (
@@ -21,11 +21,18 @@ const ModalTask = ({createTask}) => {
               <Surface variant="default">
                 <form action={createTask} className="flex flex-col gap-4">
                   <TextField
-                  isRequired
-                   className="w-full" name="title" type="text">
-                    <Label>Title</Label>
-                    <Input placeholder="Enter your cart Title" />
-                  </TextField>
+                                    isRequired
+                                    minLength={5}
+                                    validate={(value) => {
+                                      if(value.length < 5) {
+                                          return "Title must be at least 5 characters";
+                                      }
+                                    }}
+                                     className="w-full" name="title" type="text">
+                                      <Label>Title</Label>
+                                      <Input placeholder="Enter your cart Title" />
+                                      <FieldError />
+                                    </TextField>
                   <TextField className="w-full" name="description" type="text">
                     <Label>Description</Label>
                     <Input placeholder="Enter your description" />
@@ -91,7 +98,7 @@ const ModalTask = ({createTask}) => {
                     <Button slot="close" variant="secondary">
                         Cancel
                     </Button>
-                    <Button type='submit' slot="close">Send Task</Button>
+                    <Button type='submit'>Send Task</Button>
                     </Modal.Footer>
                 </form>
               </Surface>

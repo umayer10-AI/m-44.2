@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
 import {Envelope} from "@gravity-ui/icons";
-import {Button, Input, Label, Modal, Surface, TextField, ListBox, Select} from "@heroui/react";
+import {Button, Input, Label, Modal, Surface, TextField, ListBox, Select, FieldError} from "@heroui/react";
 import { newCreateTask } from '@/lib/action';
 
 const page = () => {
@@ -19,6 +19,7 @@ const page = () => {
                    className="w-full" name="title" type="text">
                     <Label>Title</Label>
                     <Input placeholder="Enter your cart Title" />
+                    <FieldError />
                   </TextField>
                   <TextField className="w-full" name="description" type="text">
                     <Label>Description</Label>
